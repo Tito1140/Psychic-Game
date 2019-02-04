@@ -33,6 +33,7 @@
         var guessesLeft = 9;
         var guesses = [];
 
+
         var directionsText = document.getElementById("directions-text")
         var computerChoicesText = document.getElementById("computerchoices-text")
         var winsText = document.getElementById("wins-text")
@@ -51,10 +52,14 @@
 
             if (userGuess != computerGuess) {
                 guessesLeft--;
+            } if (guessesLeft === 0) {
+                losses++;
+                guesses = [];
+                guessesLeft = 9;
             } else if (userGuess === computerGuess) {
                 wins++;
-            } else {
-                losses++;
+                guesses = [];
+                guessesLeft = 9;
             }
 
 
